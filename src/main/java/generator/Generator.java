@@ -19,7 +19,9 @@ public abstract class Generator {
         if(formatted){
             format();
         }
-        return this.document;
+        String generatedDocument = this.document;
+        this.document = "";
+        return generatedDocument;
     }
 
     protected abstract void generateLastDigits();

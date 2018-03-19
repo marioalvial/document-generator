@@ -30,24 +30,21 @@ Or download the jar file at branch "jar-branch" and import in your Java project
 
 ```
     public static void main(String[] args) {
-        Generator cpf = new CPFGenerator(false);
-        Generator cnpj = new CNPJGenerator(false);
-        Generator cpfFormatted = new CPFGenerator(true);
-        Generator cnpjFormatted = new CNPJGenerator(true);
+      DocumentGenerator cpfGenerator = new CPFGenerator();
+      DocumentGenerator cnpjGenerator = new CNPJGenerator();
 
-        System.out.println(cpf.generate());
-        System.out.println(cnpj.generate());
-        System.out.println(cpfFormatted.generate());
-        System.out.println(cnpjFormatted.generate());
+      System.out.println(cpfGenerator.generate());
+      System.out.println(cpfGenerator.generateFormatted());
+      System.out.println(cnpjGenerator.generate());
+      System.out.println(cnpjGenerator.generateFormatted(
     }
 
 ```
 Output:
 
 ```
-17970388930
-69273015977174
-381.204.310-65
-01.678.735/2432-04
-
+48276698050
+689.904.234-73
+20823015951226
+62.358.957/8679-47
 ```

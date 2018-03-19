@@ -2,26 +2,32 @@ package generator;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public abstract class Generator {
+public abstract class DocumentGenerator {
 
     String document = "";
-    private final boolean formatted;
     private final int NUMBER_OF_FIRST_DIGITS;
 
-    Generator(boolean formatted, int numberOfFirstDigits) {
-        this.formatted = formatted;
+    DocumentGenerator(int numberOfFirstDigits) {
         this.NUMBER_OF_FIRST_DIGITS = numberOfFirstDigits;
     }
 
     public final String generate(){
         generateFirstDigits(NUMBER_OF_FIRST_DIGITS);
         generateLastDigits();
-        if(formatted){
-            format();
-        }
+        return prepareForReturn();
+    }
+
+    private String prepareForReturn() {
         String generatedDocument = this.document;
         this.document = "";
         return generatedDocument;
+    }
+
+    public final String generateFormatted(){
+        generateFirstDigits(NUMBER_OF_FIRST_DIGITS);
+        generateLastDigits();
+        format();
+        return prepareForReturn();
     }
 
     protected abstract void generateLastDigits();

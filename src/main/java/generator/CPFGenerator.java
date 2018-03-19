@@ -1,9 +1,9 @@
 package generator;
 
-public class CPFGenerator extends Generator {
+public class CPFGenerator extends DocumentGenerator {
 
-    public CPFGenerator(boolean formatted) {
-        super(formatted, 9);
+    public CPFGenerator() {
+        super(9);
     }
 
     @Override

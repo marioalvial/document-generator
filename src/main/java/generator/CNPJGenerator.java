@@ -1,9 +1,9 @@
 package generator;
 
-public class CNPJGenerator extends Generator {
+public class CNPJGenerator extends DocumentGenerator {
 
-    public CNPJGenerator(boolean formatted) {
-        super(formatted, 12);
+    public CNPJGenerator() {
+        super(12);
     }
 
     @Override
